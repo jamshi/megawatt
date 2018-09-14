@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block nav %}
+    {{ block.super}}
+{% endblock %}
+
+{% block content %}
+<h1>Summary</h1>
+
+<a href="{% url 'summary-sum' %}"><button type="button" class="btn btn-primary active">Sum</button></a>
+<a href="{% url 'summary-avg'%}"><button type="button" class="btn btn-primary">Average</button></a>
+
+<table class="table">
+  <thead>
+      <tr>
+          <td><strong>Site</strong></td>
+          <td><strong>A Value</strong></td>
+          <td><strong>B Value</strong></td>
+      </tr>
+  </thead>
+    {% for site in site_summary %}
+      <tr>
+          <td>{{site.name}}</td>
+          <td>{{site.a_value_sum|floatformat:2}}</td>
+          <td>{{site.b_value_sum|floatformat:2}}</td>
+      </tr>
+    {% endfor%}
+      
+</table>
+{% endblock %}
