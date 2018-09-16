@@ -9,8 +9,11 @@ Custom model manager code is in `core/managers.py` file.
 
 #### Steps to run solution
 
+
     - pip install -r requirements.txt
     - python manage.py migrate
+    - # Load dumped data to database
+    - python manage.py loaddata core/fixtures/fixtures.json
     - python manage.py runserver
     
 #### Step to run test suite
