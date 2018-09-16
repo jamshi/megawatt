@@ -19,9 +19,9 @@ from core import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.home, name='home'),
-    path('sites', views.home, name='sites'),
+    path('', views.HomePageView.as_view(), name='home'),
+    path('sites', views.HomePageView.as_view(), name='sites'),
     path('sites/<int:id>', views.site_details, name='site_detail'),
-    path('summary', views.site_summary_sum, name='summary-sum'),
-    path('summary-average', views.site_summary_average, name='summary-avg')
+    path('summary', views.SumView.as_view(), name='summary-sum'),
+    path('summary-average', views.AvgView.as_view(), name='summary-avg')
 ]
